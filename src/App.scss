@@ -1,0 +1,36 @@
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid #E6E9EC;
+  background: #fff;
+  z-index: 1;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  gap: 5px;
+  place-items: center;
+  .menu-item {
+    display: grid;
+    place-items: center;
+    // border: 1px solid tomato;
+  }
+  p {
+    color: #8E9294;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+  }
+  .active p {
+    color: red;
+  }
+  a {
+    text-decoration: none;
+  }
+  // .icon {
+  //   width: 32px;
+  //   height: 32px;
+    
+  // }
+}

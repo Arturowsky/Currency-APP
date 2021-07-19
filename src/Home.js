@@ -5,16 +5,21 @@ import "./styles/home.scss";
 // IMAGES
 import calc from "./assets/images/calc.svg";
 import line from "./assets/images/line.svg";
+import plus from "./assets/images/plus.svg";
 import poland from "./assets/flags/poland.svg";
 import uk from "./assets/flags/uk.svg";
 import eu from "./assets/flags/eu.svg";
 import usa from "./assets/flags/usa.svg";
 import norway from "./assets/flags/norway.svg";
+import czech from "./assets/flags/czech.svg";
+import thailand from "./assets/flags/thailand.svg";
 const Home = () => {
   const [ukgbp, setUkgbp] = useState({ currency: "", code: "", mid: "" });
   const [euro, setEuro] = useState({ currency: "", code: "", mid: "" });
   const [usd, setUsd] = useState({ currency: "", code: "", mid: "" });
   const [nok, setNok] = useState({ currency: "", code: "", mid: "" });
+  const [czk, setCzk] = useState({ currency: "", code: "", mid: "" });
+  const [thb, setThb] = useState({ currency: "", code: "", mid: "" });
 
   
   useEffect(() => {
@@ -27,6 +32,8 @@ const Home = () => {
       setEuro({ currency: currencyData.data[0].rates[7].currency, code: currencyData.data[0].rates[7].code, mid: currencyData.data[0].rates[7].mid})
       setUsd({ currency: currencyData.data[0].rates[1].currency, code: currencyData.data[0].rates[1].code, mid: currencyData.data[0].rates[1].mid})
       setNok({ currency: currencyData.data[0].rates[16].currency, code: currencyData.data[0].rates[16].code, mid: currencyData.data[0].rates[16].mid})
+      setCzk({ currency: currencyData.data[0].rates[13].currency, code: currencyData.data[0].rates[13].code, mid: currencyData.data[0].rates[13].mid})
+      setThb({ currency: currencyData.data[0].rates[0].currency, code: currencyData.data[0].rates[0].code, mid: currencyData.data[0].rates[0].mid})
       
     };
     fetchData();
@@ -95,6 +102,29 @@ const Home = () => {
         <p>1 PLN = {(1 / usd.mid).toFixed(4)} {usd.code}</p>
       </div>
     </div>
+    <div className="currencies-single-item">
+        <div className="currencies-flag"><img src={czech} alt="" /></div>
+        <div className="currencies-name">
+        <h3>{czk.code}</h3>
+        <p>{czk.currency}</p>
+      </div>
+      <div className="currencies-value">
+        <h3>{czk.mid}</h3>
+        <p>1 PLN = {(1 / czk.mid).toFixed(4)} {czk.code}</p>
+      </div>
+    </div>
+    <div className="currencies-single-item">
+        <div className="currencies-flag"><img src={thailand} alt="" /></div>
+        <div className="currencies-name">
+        <h3>{thb.code}</h3>
+        <p>{thb.currency}</p>
+      </div>
+      <div className="currencies-value">
+        <h3>{thb.mid}</h3>
+        <p>1 PLN = {(1 / thb.mid).toFixed(4)} {thb.code}</p>
+      </div>
+    </div>
+    <div className="button-container"><button className="btn-add-country"><img src={plus} alt="" /><span>dodaj walutę</span></button></div>
   </div>)
 }
 

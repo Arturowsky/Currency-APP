@@ -13,6 +13,8 @@ import usa from "./assets/flags/usa.svg";
 import norway from "./assets/flags/norway.svg";
 import czech from "./assets/flags/czech.svg";
 import thailand from "./assets/flags/thailand.svg";
+import australia from "./assets/flags/australia.svg";
+import hongkong from "./assets/flags/hongkong.svg";
 const Home = () => {
   const [ukgbp, setUkgbp] = useState({ currency: "", code: "", mid: "" });
   const [euro, setEuro] = useState({ currency: "", code: "", mid: "" });
@@ -20,6 +22,8 @@ const Home = () => {
   const [nok, setNok] = useState({ currency: "", code: "", mid: "" });
   const [czk, setCzk] = useState({ currency: "", code: "", mid: "" });
   const [thb, setThb] = useState({ currency: "", code: "", mid: "" });
+  const [aud, setAud] = useState({ currency: "", code: "", mid: "" });
+  const [hkn, setHkn] = useState({ currency: "", code: "", mid: "" });
 
   
   useEffect(() => {
@@ -34,7 +38,8 @@ const Home = () => {
       setNok({ currency: currencyData.data[0].rates[16].currency, code: currencyData.data[0].rates[16].code, mid: currencyData.data[0].rates[16].mid})
       setCzk({ currency: currencyData.data[0].rates[13].currency, code: currencyData.data[0].rates[13].code, mid: currencyData.data[0].rates[13].mid})
       setThb({ currency: currencyData.data[0].rates[0].currency, code: currencyData.data[0].rates[0].code, mid: currencyData.data[0].rates[0].mid})
-      
+      setAud({ currency: currencyData.data[0].rates[2].currency, code: currencyData.data[0].rates[2].code, mid: currencyData.data[0].rates[2].mid})
+      setHkn({ currency: currencyData.data[0].rates[3].currency, code: currencyData.data[0].rates[3].code, mid: currencyData.data[0].rates[3].mid})
     };
     fetchData();
    
@@ -124,7 +129,30 @@ const Home = () => {
         <p>1 PLN = {(1 / thb.mid).toFixed(4)} {thb.code}</p>
       </div>
     </div>
+    {/* <div className="placeholder"></div> */}
+    <div className="currencies-single-item">
+        <div className="currencies-flag"><img src={australia} alt="" /></div>
+        <div className="currencies-name">
+        <h3>{aud.code}</h3>
+        <p>{aud.currency}</p>
+      </div>
+      <div className="currencies-value">
+        <h3>{aud.mid}</h3>
+        <p>1 PLN = {(1 / aud.mid).toFixed(4)} {aud.code}</p>
+      </div>
+    </div><div className="currencies-single-item">
+        <div className="currencies-flag"><img src={hongkong} alt="" /></div>
+        <div className="currencies-name">
+        <h3>{hkn.code}</h3>
+        <p>{hkn.currency}</p>
+      </div>
+      <div className="currencies-value">
+        <h3>{hkn.mid}</h3>
+        <p>1 PLN = {(1 / hkn.mid).toFixed(4)} {hkn.code}</p>
+      </div>
+    </div>
     <div className="button-container"><button className="btn-add-country"><img src={plus} alt="" /><span>dodaj walutę</span></button></div>
+    <div className="placeholder"></div>
   </div>)
 }
 

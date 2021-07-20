@@ -15,7 +15,11 @@ import czech from "./assets/flags/czech.svg";
 import thailand from "./assets/flags/thailand.svg";
 import australia from "./assets/flags/australia.svg";
 import hongkong from "./assets/flags/hongkong.svg";
+import canada from "./assets/flags/canada.svg";
+import hungary from "./assets/flags/hungary.svg";
+import switzerland from "./assets/flags/switzerland.svg";
 const Home = () => {
+  const [pln, setPln] = useState(1)
   const [ukgbp, setUkgbp] = useState({ currency: "", code: "", mid: "" });
   const [euro, setEuro] = useState({ currency: "", code: "", mid: "" });
   const [usd, setUsd] = useState({ currency: "", code: "", mid: "" });
@@ -24,6 +28,9 @@ const Home = () => {
   const [thb, setThb] = useState({ currency: "", code: "", mid: "" });
   const [aud, setAud] = useState({ currency: "", code: "", mid: "" });
   const [hkn, setHkn] = useState({ currency: "", code: "", mid: "" });
+  const [cad, setCad] = useState({ currency: "", code: "", mid: "" });
+  const [huf, setHuf] = useState({ currency: "", code: "", mid: "" });
+  const [chf, setChf] = useState({ currency: "", code: "", mid: "" });
 
   
   useEffect(() => {
@@ -40,11 +47,14 @@ const Home = () => {
       setThb({ currency: currencyData.data[0].rates[0].currency, code: currencyData.data[0].rates[0].code, mid: currencyData.data[0].rates[0].mid})
       setAud({ currency: currencyData.data[0].rates[2].currency, code: currencyData.data[0].rates[2].code, mid: currencyData.data[0].rates[2].mid})
       setHkn({ currency: currencyData.data[0].rates[3].currency, code: currencyData.data[0].rates[3].code, mid: currencyData.data[0].rates[3].mid})
+      setCad({ currency: currencyData.data[0].rates[4].currency, code: currencyData.data[0].rates[4].code, mid: currencyData.data[0].rates[4].mid})
+      setHuf({ currency: currencyData.data[0].rates[8].currency, code: currencyData.data[0].rates[8].code, mid: currencyData.data[0].rates[8].mid})
+      setChf({ currency: currencyData.data[0].rates[9].currency, code: currencyData.data[0].rates[9].code, mid: currencyData.data[0].rates[9].mid})
     };
     fetchData();
    
   }, []);
-  
+
  
     return(<div className="container">
     <div className="currency-item">
@@ -56,7 +66,7 @@ const Home = () => {
         <p>polski złoty</p>
       </div>
       <div className="currency-number">
-        <p>9687</p>
+        <input type="number" placeholder="1" value={pln} onChange={(e) => setPln(e.target.value)}/>
       </div>
       <img src={line} alt="" />
       <div className="currency-calc">
@@ -70,7 +80,7 @@ const Home = () => {
         <p>{ukgbp.currency}</p>
       </div>
       <div className="currencies-value">
-        <h3>{ukgbp.mid}</h3>
+        <h3>{pln === 1 ? ukgbp.mid : (pln / ukgbp.mid).toFixed(2)}</h3>
         <p>1 PLN = {(1 / ukgbp.mid).toFixed(4)} {ukgbp.code}</p>
       </div>
     </div>
@@ -81,7 +91,7 @@ const Home = () => {
         <p>{euro.currency}</p>
       </div>
       <div className="currencies-value">
-        <h3>{euro.mid}</h3>
+        <h3>{pln === 1 ? euro.mid : (pln / euro.mid).toFixed(2)}</h3>
         <p>1 PLN = {(1 / euro.mid).toFixed(4)} {euro.code}</p>
       </div>
     </div>
@@ -92,7 +102,7 @@ const Home = () => {
         <p>{nok.currency}</p>
       </div>
       <div className="currencies-value">
-        <h3>{nok.mid}</h3>
+        <h3>{pln === 1 ? nok.mid : (pln / nok.mid).toFixed(2)}</h3>
         <p>1 PLN = {(1 / nok.mid).toFixed(4)} {nok.code}</p>
       </div>
     </div>
@@ -103,8 +113,40 @@ const Home = () => {
         <p>{usd.currency}</p>
       </div>
       <div className="currencies-value">
-        <h3>{usd.mid}</h3>
+        <h3>{pln === 1 ? usd.mid : (pln / usd.mid).toFixed(2)}</h3>
         <p>1 PLN = {(1 / usd.mid).toFixed(4)} {usd.code}</p>
+      </div>
+    </div><div className="currencies-single-item">
+        <div className="currencies-flag"><img src={canada} alt="" /></div>
+        <div className="currencies-name">
+        <h3>{cad.code}</h3>
+        <p>{cad.currency}</p>
+      </div>
+      <div className="currencies-value">
+        <h3>{pln === 1 ? cad.mid : (pln / cad.mid).toFixed(2)}</h3>
+        <p>1 PLN = {(1 / cad.mid).toFixed(4)} {cad.code}</p>
+      </div>
+    </div>
+    <div className="currencies-single-item">
+        <div className="currencies-flag"><img src={hungary} alt="" /></div>
+        <div className="currencies-name">
+        <h3>{huf.code}</h3>
+        <p>{huf.currency}</p>
+      </div>
+      <div className="currencies-value">
+        <h3>{pln === 1 ? huf.mid : (pln / huf.mid).toFixed(2)}</h3>
+        <p>1 PLN = {(1 / huf.mid).toFixed(4)} {huf.code}</p>
+      </div>
+    </div>
+    <div className="currencies-single-item">
+        <div className="currencies-flag"><img src={switzerland} alt="" /></div>
+        <div className="currencies-name">
+        <h3>{chf.code}</h3>
+        <p>{chf.currency}</p>
+      </div>
+      <div className="currencies-value">
+        <h3>{pln === 1 ? chf.mid : (pln / chf.mid).toFixed(2)}</h3>
+        <p>1 PLN = {(1 / chf.mid).toFixed(4)} {chf.code}</p>
       </div>
     </div>
     <div className="currencies-single-item">
@@ -114,7 +156,7 @@ const Home = () => {
         <p>{czk.currency}</p>
       </div>
       <div className="currencies-value">
-        <h3>{czk.mid}</h3>
+        <h3>{pln === 1 ? czk.mid : (pln / czk.mid).toFixed(2)}</h3>
         <p>1 PLN = {(1 / czk.mid).toFixed(4)} {czk.code}</p>
       </div>
     </div>
@@ -125,7 +167,7 @@ const Home = () => {
         <p>{thb.currency}</p>
       </div>
       <div className="currencies-value">
-        <h3>{thb.mid}</h3>
+        <h3>{pln === 1 ? thb.mid : (pln / thb.mid).toFixed(2)}</h3>
         <p>1 PLN = {(1 / thb.mid).toFixed(4)} {thb.code}</p>
       </div>
     </div>
@@ -137,7 +179,7 @@ const Home = () => {
         <p>{aud.currency}</p>
       </div>
       <div className="currencies-value">
-        <h3>{aud.mid}</h3>
+        <h3>{pln === 1 ? aud.mid : (pln / aud.mid).toFixed(2)}</h3>
         <p>1 PLN = {(1 / aud.mid).toFixed(4)} {aud.code}</p>
       </div>
     </div><div className="currencies-single-item">
@@ -147,10 +189,11 @@ const Home = () => {
         <p>{hkn.currency}</p>
       </div>
       <div className="currencies-value">
-        <h3>{hkn.mid}</h3>
+        <h3>{pln === 1 ? hkn.mid : (pln / hkn.mid).toFixed(2)}</h3>
         <p>1 PLN = {(1 / hkn.mid).toFixed(4)} {hkn.code}</p>
       </div>
     </div>
+    
     <div className="button-container"><button className="btn-add-country"><img src={plus} alt="" /><span>dodaj walutę</span></button></div>
     <div className="placeholder"></div>
   </div>)

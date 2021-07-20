@@ -1,7 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
+// COMPONENTS
 import Header from "./Header";
 import Home from "./Home";
+import Gold from "./Gold";
+import Info from "./Info";
 import Footer from "./Footer";
 // STYLE
 import "./App.scss";
@@ -21,7 +24,10 @@ export default function App() {
           <h1>Notowanie</h1>
         </Route>
         <Route path="/cenazlota">
-          <h1>Cena zlota</h1>
+          <Gold />
+        </Route>
+        <Route path="/info">
+          <Info />
         </Route>
         <Route path="/">
           <Home />
@@ -30,7 +36,7 @@ export default function App() {
       <div>
         <footer>
           <nav>
-            <Link to="/">
+            <Link exact to="/">
               <div className="menu-item">
                 <img src={home} alt="home" className="icon" />
                 <p>Start</p>

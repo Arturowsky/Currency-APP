@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "./static/css/main.8c000f1e.chunk.css",
+    "main.js": "./static/js/main.061a3a4d.chunk.js",
+    "main.js.map": "./static/js/main.061a3a4d.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.574302c6.js",
+    "runtime-main.js.map": "./static/js/runtime-main.574302c6.js.map",
+    "static/js/2.c97a0b79.chunk.js": "./static/js/2.c97a0b79.chunk.js",
+    "static/js/2.c97a0b79.chunk.js.map": "./static/js/2.c97a0b79.chunk.js.map",
+    "static/js/3.c2bba87d.chunk.js": "./static/js/3.c2bba87d.chunk.js",
+    "static/js/3.c2bba87d.chunk.js.map": "./static/js/3.c2bba87d.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.8c000f1e.chunk.css.map": "./static/css/main.8c000f1e.chunk.css.map",
+    "static/js/2.c97a0b79.chunk.js.LICENSE.txt": "./static/js/2.c97a0b79.chunk.js.LICENSE.txt",
+    "static/media/australia.b699fc37.svg": "./static/media/australia.b699fc37.svg",
+    "static/media/calc.8434fe39.svg": "./static/media/calc.8434fe39.svg",
+    "static/media/currency-exchange.a31759a2.svg": "./static/media/currency-exchange.a31759a2.svg",
+    "static/media/czech.9e333add.svg": "./static/media/czech.9e333add.svg",
+    "static/media/diamond.250bb7a7.svg": "./static/media/diamond.250bb7a7.svg",
+    "static/media/eu.77b0e6dc.svg": "./static/media/eu.77b0e6dc.svg",
+    "static/media/gear.922caba8.svg": "./static/media/gear.922caba8.svg",
+    "static/media/gem.a92e5806.svg": "./static/media/gem.a92e5806.svg",
+    "static/media/goldbars.8bbb67d5.svg": "./static/media/goldbars.8bbb67d5.svg",
+    "static/media/graph-up.213eef65.svg": "./static/media/graph-up.213eef65.svg",
+    "static/media/hongkong.1923ebae.svg": "./static/media/hongkong.1923ebae.svg",
+    "static/media/house-door.87914202.svg": "./static/media/house-door.87914202.svg",
+    "static/media/line.0320e7f8.svg": "./static/media/line.0320e7f8.svg",
+    "static/media/list.9c299cc5.svg": "./static/media/list.9c299cc5.svg",
+    "static/media/norway.55f66269.svg": "./static/media/norway.55f66269.svg",
+    "static/media/plus.15f5f2cc.svg": "./static/media/plus.15f5f2cc.svg",
+    "static/media/poland.20407cf4.svg": "./static/media/poland.20407cf4.svg",
+    "static/media/thailand.c6b2252f.svg": "./static/media/thailand.c6b2252f.svg",
+    "static/media/uk.e5124366.svg": "./static/media/uk.e5124366.svg",
+    "static/media/usa.c15ff087.svg": "./static/media/usa.c15ff087.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.574302c6.js",
+    "static/js/2.c97a0b79.chunk.js",
+    "static/css/main.8c000f1e.chunk.css",
+    "static/js/main.061a3a4d.chunk.js"
+  ]
+}

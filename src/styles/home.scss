@@ -1,13 +1,14 @@
 .currency-item {
   width: 88%;
   margin: 10px auto;
-  padding: 1px 15px;
+  padding: 10px 15px;
   display: grid;
   grid-template-columns: 50px 1fr 70px 15px 20px;
   align-items: center;
   // place-items: center;
   border: 1px solid #dad6d6;
   border-radius: 10px;
+  
 }
 
 .currency-name {
@@ -29,11 +30,16 @@
   }
 }
 .currency-number {
-  p {
+  
+  input[type=number] {
     font-weight: 600;
     color: #656363;
     font-family: "Poppins", sans-serif;
     font-size: 1.125rem;
+    width: 60px;
+    border: none;
+    text-align: right;
+    
   }
 }
 
@@ -100,6 +106,8 @@
   width: 85%;
   span {
       margin-left: 10px;
+      top: -2px;
+      position: relative;
   }
   // margin: 10 auto;
 }

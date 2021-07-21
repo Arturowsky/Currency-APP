@@ -1,0 +1,89 @@
+.stats-container {
+    width: 100%;
+}
+
+.stats-logo {
+    width: 100%;
+    // border: 1px solid tomato;
+    display: grid;
+    place-items: center;
+    margin-top: 50px;
+    height: 200px;
+    p {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.125rem;
+        color: #928B8B;
+        font-weight: 300;
+    }
+}
+.stats-select {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    select {
+        border: 1px solid #C7BDBD;
+        width: 70%;
+        margin: 0 auto;
+        padding: 10px;
+        font-family: "Poppins", sans-serif;
+        font-size: 0.875rem
+    }
+    p {
+        font-family: "Poppins", sans-serif;
+        font-size: 1.125rem;
+        color: #928B8B;
+        font-weight: 300;
+        margin-top: 50px 0;
+        span {
+            color: #CCC4C4
+        }
+    }
+}
+// OTHER COUNTRIES
+.currencies-single-item {
+    width: 88%;
+    margin: 10px auto;
+    padding: 10px 15px;
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr;
+    align-items: center;
+    // place-items: center;
+    border: 1px solid #dad6d6;
+    border-radius: 10px;
+  }
+  .currencies-name,
+  .currencies-value {
+    h3 {
+      font-weight: 600;
+      color: #2d3436;
+      font-size: 1.125rem;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+    p {
+      color: #aca4a4;
+      font-size: 0.875rem;
+      font-weight: 300;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+  }
+  .currencies-value {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    h3 {
+      font-weight: 600;
+      color: #656363;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.125rem;
+    }
+  }
+  // PLACEHOLDER
+.placeholder {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 100px;
+}

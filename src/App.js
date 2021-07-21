@@ -1,11 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // COMPONENTS
 import Header from "./Header";
 import Home from "./Home";
 import Gold from "./Gold";
 import Info from "./Info";
-import Footer from "./Footer";
+import Stats from "./Stats"
+
 // STYLE
 import "./App.scss";
 // IMAGES
@@ -21,7 +22,7 @@ export default function App() {
       <Header />
       <Switch>
         <Route path="/notowanie">
-          <h1>Notowanie</h1>
+          <Stats />
         </Route>
         <Route path="/cenazlota">
           <Gold />
@@ -72,7 +73,7 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
       </div>
-      {/* <Footer /> */}
+     
     </Router>
   );
 }

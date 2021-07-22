@@ -195,6 +195,7 @@ const Home = () => {
             placeholder="1"
             value={pln}
             onChange={(e) => setPln(e.target.value)}
+            min="0"
           />
         </div>
         <img src={line} alt="" />

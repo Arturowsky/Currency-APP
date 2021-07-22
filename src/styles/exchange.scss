@@ -1,0 +1,46 @@
+.exchange-container {
+  width: 100%;
+}
+.exchange-logo {
+  width: 100%;
+  // border: 1px solid tomato;
+  display: grid;
+  place-items: center;
+  margin: 50px 0;
+  height: 200px;
+  p {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.125rem;
+    color: #928b8b;
+    font-weight: 300;
+  }
+}
+.exchange-grid {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+ 
+  .exchange-grid-left,
+  .exchange-grid-right {
+    // width: 75%;
+    margin: 0 20px;
+  }
+}
+
+label {
+  display: block;
+  font-family: "Poppins", sans-serif;
+    font-size: 1.125rem;
+    color: #928b8b;
+    font-weight: 300;
+    margin: 20px 0;
+}
+select,
+input[type=number] {
+  width: 90%;
+  border: 1px solid #c7bdbd;
+
+  margin: 0 auto;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+}

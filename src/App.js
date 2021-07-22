@@ -6,6 +6,7 @@ import Home from "./Home";
 import Gold from "./Gold";
 import Info from "./Info";
 import Stats from "./Stats"
+import Exchange from "./Exchange"
 
 // STYLE
 import "./App.scss";
@@ -21,6 +22,9 @@ export default function App() {
     <Router>
       <Header />
       <Switch>
+      <Route path="/konwerter">
+          <Exchange />
+        </Route>
         <Route path="/notowanie">
           <Stats />
         </Route>

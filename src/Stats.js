@@ -64,6 +64,12 @@ const countriesStats = [
     currencyname: "frank szwajcarski",
     image: switzerland,
   },
+  {
+    code: "czk",
+    codename: "CZK",
+    currencyname: "korona czeska",
+    image: czech,
+  },
 ];
 const Stats = () => {
   const [countryCode, setCountryCode] = useState("gbp");
@@ -285,6 +291,33 @@ const Stats = () => {
           flag: switzerland,
         });
       }
+      else if (countryCode === "czk") {
+        setUkgbp({
+          currency: currentCurrency.data.currency,
+          code: currentCurrency.data.code,
+          mid: currentCurrency.data.rates[9].mid,
+          time: currentCurrency.data.rates[9].effectiveDate,
+          mid2: currentCurrency.data.rates[8].mid,
+          time2: currentCurrency.data.rates[8].effectiveDate,
+          mid3: currentCurrency.data.rates[7].mid,
+          time3: currentCurrency.data.rates[7].effectiveDate,
+          mid4: currentCurrency.data.rates[6].mid,
+          time4: currentCurrency.data.rates[6].effectiveDate,
+          mid5: currentCurrency.data.rates[5].mid,
+          time5: currentCurrency.data.rates[5].effectiveDate,
+          mid6: currentCurrency.data.rates[4].mid,
+          time6: currentCurrency.data.rates[4].effectiveDate,
+          mid7: currentCurrency.data.rates[3].mid,
+          time7: currentCurrency.data.rates[3].effectiveDate,
+          mid8: currentCurrency.data.rates[2].mid,
+          time8: currentCurrency.data.rates[2].effectiveDate,
+          mid9: currentCurrency.data.rates[1].mid,
+          time9: currentCurrency.data.rates[1].effectiveDate,
+          mid10: currentCurrency.data.rates[0].mid,
+          time10: currentCurrency.data.rates[0].effectiveDate,
+          flag: czech,
+        });
+      }
       console.log(currentCurrency);
     };
 
@@ -311,7 +344,7 @@ const Stats = () => {
         </select>
 
         <p>
-          Kurs {ukgbp.code} <span>(ostatnie 10 dnia)</span>
+          Kurs {ukgbp.code} <span>(ostatnie 10 dni)</span>
         </p>
       </div>
       <div className="currencies-single-item" data-aos="fade-up">

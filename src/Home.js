@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 // STYLES
 import "./styles/home.scss";
 // IMAGES
@@ -33,6 +35,7 @@ const Home = () => {
   const [chf, setChf] = useState({ currency: "", code: "", mid: "" });
 
   useEffect(() => {
+    AOS.init()
     const fetchData = async () => {
       const currencyData = await axios(
         `http://api.nbp.pl/api/exchangerates/tables/a/`
@@ -178,8 +181,8 @@ const Home = () => {
   ];
   return (
     <div className="container">
-      <div className="currency-item">
-        <div className="currency-flag">
+      <div className="currency-item" data-aos="fade-up">
+        <div className="currency-flag" >
           <img src={poland} alt="poland" />
         </div>
         <div className="currency-name">
@@ -200,7 +203,7 @@ const Home = () => {
         </div>
       </div>
       {countries.map((item, index) => (
-        <div className="currencies-single-item">
+        <div className="currencies-single-item" data-aos="fade-up">
           <div className="currencies-flag">
             <img src={item.flag} alt="" />
           </div>

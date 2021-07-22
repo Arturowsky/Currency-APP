@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 // STYLES
 import "./styles/gold.scss";
 // IMAGES
@@ -38,6 +40,7 @@ const Gold = () => {
   const [gold1, setGold1] = useState({ price: "", time: "" });
   const [gold0, setGold0] = useState({ price: "", time: "" });
   useEffect(() => {
+    AOS.init()
     const fetchData = async () => {
       const goldData = await axios(
         "http://api.nbp.pl/api/cenyzlota/last/30/?format=json"
@@ -261,14 +264,14 @@ const Gold = () => {
   ];
   return (
     <div className="gold-container">
-      <div className="gold-logo">
+      <div className="gold-logo" data-aos="fade-up">
         <img src={gold} alt="Złoto" />
         <p>
           Ceny złota <span>(ostatnie 30 dni)</span>
         </p>
       </div>
       {goldPrice.map((item, index) => (
-        <div className="gold-item" key={index}>
+        <div className="gold-item" key={index} data-aos="fade-up">
           <div className="gold-flag">
             <img src={goldbars} alt="" />
           </div>

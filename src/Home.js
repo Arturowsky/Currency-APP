@@ -98,8 +98,9 @@ const Home = () => {
       });
     };
     fetchData();
+    
   }, []);
-
+  
   const countries = [
     {
       flag: uk,

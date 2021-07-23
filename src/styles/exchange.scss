@@ -6,8 +6,8 @@
   // border: 1px solid tomato;
   display: grid;
   place-items: center;
-  margin: 50px 0;
-  height: 200px;
+  margin: 25px 0;
+  // height: 200px;
   p {
     font-family: "Poppins", sans-serif;
     font-size: 1.125rem;
@@ -36,11 +36,42 @@ label {
 }
 select,
 input[type=number] {
-  width: 90%;
+  width: 100%;
   border: 1px solid #c7bdbd;
-
-  margin: 0 auto;
+  // margin: 0 auto;
+  box-sizing:border-box;
   padding: 10px;
   font-family: "Poppins", sans-serif;
   font-size: 0.875rem;
 }
+  // PLACEHOLDER
+  .placeholder {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 100px;
+}
+.button-container {
+    // margin: 0 auto;
+    // border: 1px solid tomato;
+    margin: 20px 0;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+  }
+  .btn-add-country {
+    background: #6c5ce7;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+    width: 85%;
+    span {
+        margin-left: 10px;
+        top: -2px;
+        position: relative;
+    }
+    // margin: 10 auto;
+  }

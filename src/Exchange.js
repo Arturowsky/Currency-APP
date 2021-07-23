@@ -6,6 +6,8 @@ import "./styles/exchange.scss"
 // IMAGES
 import exchangelogo from "./assets/images/exchange-logo.svg"
 import verticalline from "./assets/images/vertical-line.svg"
+import arrow from "./assets/images/arrow-repeat.svg";
+import arrowclockwise from "./assets/images/arrow-clockwise.svg";
 const Exchange = () => {
 
     return (
@@ -23,7 +25,7 @@ const Exchange = () => {
                     </select>
                     <label>Podaj ilość
                     </label>
-                    <input type="number"></input>
+                    <input type="number" />
                 </div>
                 <img src={verticalline} alt="" />
                 <div className="exchange-grid-right">
@@ -36,9 +38,19 @@ const Exchange = () => {
                     </select>
                     <label>Otrzymasz
                     </label>
-                    <input type="number"></input>
+                    <input type="number" disabled={true}/>
                 </div>
             </div>
+            <div className="button-container">
+        <button className="btn-add-country">
+          <img src={arrow} alt="" />
+          <span>zamień</span>
+        </button><button className="btn-add-country">
+          <img src={arrowclockwise} alt="" />
+          <span>reset</span>
+        </button>
+      </div>
+            <div className="placeholder"></div>
         </div>
     )
 }

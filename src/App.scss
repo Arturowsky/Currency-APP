@@ -26,15 +26,32 @@ nav {
     font-weight: 400;
     font-size: 0.875rem;
   }
-  .active p {
-    color: red;
-  }
+
   a {
     text-decoration: none;
   }
-  // .icon {
-  //   width: 32px;
-  //   height: 32px;
-    
-  // }
+  
+}
+// MEDIA QUERY
+
+@media (min-width: 1024px) {
+  .main-component {
+    width: 100%;
+    background: pink;
+  }
+  footer {
+    display: grid;
+    place-items: center;
+    width: 55%;
+    margin: 0 auto;
+  }
+  nav {
+    width: 55%;
+    margin: 0 auto;
+  }
+}
+
+.aktive {
+  background: pink;
+  border: 1px solid tomato;
 }

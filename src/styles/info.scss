@@ -34,3 +34,11 @@
   place-items: center;
   grid-template-columns: 1fr;
 }
+// MEDIA QUERY
+
+@media (min-width: 1024px) {
+  .info-container {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

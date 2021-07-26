@@ -20,6 +20,22 @@ import hongkong from "./assets/flags/hongkong.svg";
 import canada from "./assets/flags/canada.svg";
 import hungary from "./assets/flags/hungary.svg";
 import switzerland from "./assets/flags/switzerland.svg";
+// IMAGES FOR SECOND ARRAY
+import sweden from "./assets/flags/sweden.svg";
+import ukraine from "./assets/flags/ukraine.svg";
+import japan from "./assets/flags/japan.svg";
+import denmark from "./assets/flags/denmark.svg";
+import croatia from "./assets/flags/croatia.svg";
+import bulgaria from "./assets/flags/bulgaria.svg";
+import romania from "./assets/flags/romania.svg";
+import turkey from "./assets/flags/turkey.svg";
+import chile from "./assets/flags/chile.svg";
+import mexico from "./assets/flags/mexico.svg";
+import brazil from "./assets/flags/brazil.svg";
+import southafrica from "./assets/flags/south-africa.svg";
+import malaysia from "./assets/flags/malaysia.svg";
+import add from "./assets/images/add.svg"
+
 const Home = () => {
   const [pln, setPln] = useState(1);
   const [ukgbp, setUkgbp] = useState({ currency: "", code: "", mid: "" });
@@ -33,6 +49,9 @@ const Home = () => {
   const [cad, setCad] = useState({ currency: "", code: "", mid: "" });
   const [huf, setHuf] = useState({ currency: "", code: "", mid: "" });
   const [chf, setChf] = useState({ currency: "", code: "", mid: "" });
+  // MENU ON/OFF
+  const [openMenu, setOpenMenu] = useState(-200);
+  
 
   useEffect(() => {
     AOS.init()
@@ -96,6 +115,7 @@ const Home = () => {
         code: currencyData.data[0].rates[9].code,
         mid: currencyData.data[0].rates[9].mid,
       });
+      
     };
     fetchData();
     
@@ -221,10 +241,81 @@ const Home = () => {
       ))}
 
       <div className="button-container">
-        <button className="btn-add-country">
+        <button className="btn-add-country" onClick={() => setOpenMenu(0)}>
           <img src={plus} alt="" />
           <span>dodaj walutę</span>
         </button>
+      </div>
+      <div className="more-currencies" style={{transform: `translateX(${openMenu}%)`}}>
+        <button className="btn-add-country-opened" onClick={() => setOpenMenu(-200)}><img src={plus} alt="" /><span>dodaj zaznaczone</span></button>
+        <div class="more-container">
+        <div className="more-item">
+          <img src={sweden} alt="sweden" style={{width: "16px", height: "16px"}}/>
+          <p>SEK <span>- korona szwedzka</span></p>
+          <img src={add} alt="add country" />
+          </div>
+          <div className="more-item" data-aos="fade-up">
+          <img src={ukraine} alt="ukraine" style={{width: "16px", height: "16px"}}/>
+          <p>UAH <span>- hrywna (Ukraina)</span></p>
+          <img src={add} alt="add country" />
+          </div>
+          <div className="more-item" data-aos="fade-up">
+          <img src={japan} alt="japan" style={{width: "16px", height: "16px"}}/>
+          <p>JPY <span>- jen (Japonia)</span></p>
+          <img src={add} alt="add country" />
+          </div>
+          <div className="more-item" data-aos="fade-up">
+          <img src={denmark} alt="denmark" style={{width: "16px", height: "16px"}}/>
+          <p>DKK <span>- korona duńska</span></p>
+          <img src={add} alt="add country" />
+          </div>
+          <div className="more-item" data-aos="fade-up">
+          <img src={croatia} alt="croatia" style={{width: "16px", height: "16px"}}/>
+          <p>HRK <span>- kuna (Chorwacja)</span></p>
+          <img src={add} alt="add country" />
+          </div>
+          <div className="more-item" data-aos="fade-up">
+          <img src={bulgaria} alt="bulgaria" style={{width: "16px", height: "16px"}}/>
+          <p>BGN <span>- lew (Bułgaria)</span></p>
+          <img src={add} alt="add country" />
+          </div>
+          <div className="more-item" data-aos="fade-up">
+          <img src={romania} alt="romania" style={{width: "16px", height: "16px"}}/>
+          <p>RON <span>- lej rumuński</span></p>
+          <img src={add} alt="add country" />
+          </div>
+          <div className="more-item" data-aos="fade-up">
+          <img src={turkey} alt="turkey" style={{width: "16px", height: "16px"}}/>
+          <p>TRY <span>- lira turecka</span></p>
+          <img src={add} alt="add country" />
+          </div>
+          <div className="more-item">
+          <img src={chile} alt="chile" style={{width: "16px", height: "16px"}}/>
+          <p>CLP <span>- peso chilijskie</span></p>
+          <img src={add} alt="add country" />
+          </div>
+          <div className="more-item">
+          <img src={mexico} alt="mexico" style={{width: "16px", height: "16px"}}/>
+          <p>MXN <span>- peso meksykańskie</span></p>
+          <img src={add} alt="add country" />
+          </div>
+          <div className="more-item">
+          <img src={southafrica} alt="south-africa" style={{width: "16px", height: "16px"}}/>
+          <p>ZAR <span>- rand (Republika Południowej Afryki)</span></p>
+          <img src={add} alt="add country" />
+          </div>
+          <div className="more-item">
+          <img src={brazil} alt="brazil" style={{width: "16px", height: "16px"}}/>
+          <p>BRL <span>- real (Brazylia)</span></p>
+          <img src={add} alt="add country" />
+          </div>
+          <div className="more-item">
+          <img src={malaysia} alt="malaysia" style={{width: "16px", height: "16px"}}/>
+          <p>MYR <span>- ringgit (Malezja)</span></p>
+          <img src={add} alt="add country" />
+          </div>
+          
+        </div>
       </div>
       <div className="placeholder"></div>
     </div>

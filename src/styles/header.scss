@@ -17,3 +17,10 @@ header {
         font-size: 1.5rem;
     }
 }
+
+@media (min-width: 1024px) {
+    header {
+        width: 35%;
+        margin: 0 auto;
+    }
+}

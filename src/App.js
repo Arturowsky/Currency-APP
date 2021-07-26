@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 // COMPONENTS
 import Header from "./Header";
 import Home from "./Home";
@@ -22,51 +22,51 @@ export default function App() {
     <Router>
       <Header />
       <Switch>
-      <Route path="/konwerter">
-          <Exchange />
-        </Route>
-        <Route path="/notowanie">
-          <Stats />
-        </Route>
-        <Route path="/cenazlota">
-          <Gold />
-        </Route>
-        <Route path="/info">
-          <Info />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
+      <Route path="/konwerter" component={Exchange} />
+          {/* <Exchange /> */}
+        {/* </Route> */}
+        <Route path="/notowanie" component={Stats} />
+          {/* <Stats />
+        </Route> */}
+        <Route path="/cenazlota" component={Gold} />
+          {/* <Gold />
+        </Route> */}
+        <Route path="/info" component={Info} />
+          {/* <Info />
+        </Route> */}
+        <Route exact path="/" component={Home} />
+          {/* <Home />
+        </Route> */}
       </Switch>
-      <div>
+      <div className="main-component">
         <footer>
           <nav>
-            <Link exact to="/">
+            <NavLink  to="/" activeClassName="aktiv">
               <div className="menu-item">
                 <img src={home} alt="home" className="icon" />
                 <p>Start</p>
               </div>
-            </Link>
+            </NavLink>
 
-            <Link to="/notowanie">
+            <Link  to="/notowanie">
               <div className="menu-item">
                 <img src={graph} alt="home" className="icon" />
                 <p>Notowanie</p>
               </div>
             </Link>
-            <Link to="/cenazlota">
+            <Link  to="/cenazlota">
               <div className="menu-item">
                 <img src={gem} alt="home" className="icon" />
                 <p>Złoto</p>
               </div>
             </Link>
-            <Link to="/konwerter">
+            <Link  to="/konwerter">
               <div className="menu-item">
                 <img src={konwerter} alt="home" className="icon" />
                 <p>Konwerter</p>
               </div>
             </Link>
-            <Link to="/info">
+            <Link  to="/info">
               <div className="menu-item">
                 <img src={list} alt="home" className="icon" />
                 <p>Info</p>

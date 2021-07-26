@@ -328,8 +328,7 @@ const Stats = () => {
     setCountryCode(e.target.value);
   };
   // alert(countryCode)
-  // console.log(currentCurrency)
-  // https://www.youtube.com/watch?v=i1ZJr5vq_4E
+
   return (
     <div className="stats-container">
       <div className="stats-logo" data-aos="fade-up">

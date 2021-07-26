@@ -87,3 +87,11 @@
     height: 20px;
     margin-bottom: 100px;
 }
+// MEDIA QUERY
+
+@media (min-width: 1024px) {
+  .stats-container {
+    width: 50%;
+    margin: 0 auto;
+  }
+}

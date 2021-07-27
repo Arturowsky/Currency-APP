@@ -8,6 +8,7 @@ import "./styles/home.scss";
 import calc from "./assets/images/calc.svg";
 import line from "./assets/images/line.svg";
 import plus from "./assets/images/plus.svg";
+import check from "./assets/images/check-all.svg"
 import poland from "./assets/flags/poland.svg";
 import uk from "./assets/flags/uk.svg";
 import eu from "./assets/flags/eu.svg";
@@ -20,8 +21,9 @@ import hongkong from "./assets/flags/hongkong.svg";
 import canada from "./assets/flags/canada.svg";
 import hungary from "./assets/flags/hungary.svg";
 import switzerland from "./assets/flags/switzerland.svg";
-// IMAGES FOR SECOND ARRAY
 import sweden from "./assets/flags/sweden.svg";
+// IMAGES FOR SECOND ARRAY
+
 import ukraine from "./assets/flags/ukraine.svg";
 import japan from "./assets/flags/japan.svg";
 import denmark from "./assets/flags/denmark.svg";
@@ -38,19 +40,32 @@ import add from "./assets/images/add.svg"
 
 const Home = () => {
   const [pln, setPln] = useState(1);
-  const [ukgbp, setUkgbp] = useState({ currency: "", code: "", mid: "" });
-  const [euro, setEuro] = useState({ currency: "", code: "", mid: "" });
-  const [usd, setUsd] = useState({ currency: "", code: "", mid: "" });
-  const [nok, setNok] = useState({ currency: "", code: "", mid: "" });
-  const [czk, setCzk] = useState({ currency: "", code: "", mid: "" });
-  const [thb, setThb] = useState({ currency: "", code: "", mid: "" });
-  const [aud, setAud] = useState({ currency: "", code: "", mid: "" });
-  const [hkn, setHkn] = useState({ currency: "", code: "", mid: "" });
-  const [cad, setCad] = useState({ currency: "", code: "", mid: "" });
-  const [huf, setHuf] = useState({ currency: "", code: "", mid: "" });
-  const [chf, setChf] = useState({ currency: "", code: "", mid: "" });
+  const [ukgbp, setUkgbp] = useState({ currency: "", code: "", vision: true});
+  const [euro, setEuro] = useState({ currency: "", code: "", vision: true});
+  const [usd, setUsd] = useState({ currency: "", code: "", vision: true });
+  const [nok, setNok] = useState({ currency: "", code: "", vision: true });
+  const [sek, setSek] = useState({ currency: "", code: "", vision: true });
+  const [czk, setCzk] = useState({ currency: "", code: "", vision: true });
+  const [thb, setThb] = useState({ currency: "", code: "", vision: true });
+  const [aud, setAud] = useState({ currency: "", code: "", vision: true });
+  const [hkn, setHkn] = useState({ currency: "", code: "", vision: true });
+  const [cad, setCad] = useState({ currency: "", code: "", vision: true });
+  const [huf, setHuf] = useState({ currency: "", code: "", vision: true });
+  const [chf, setChf] = useState({ currency: "", code: "", vision: true });
+  const [uah, setUah] = useState({ currency: "", code: "", vision: true });
+  const [jpy, setJpy] = useState({ currency: "", code: "", vision: true });
+  const [dkk, setDkk] = useState({ currency: "", code: "", vision: true });
+  const [hrk, setHrk] = useState({ currency: "", code: "", vision: true });
+  const [bgn, setBgn] = useState({ currency: "", code: "", vision: true });
+  const [ron, setRon] = useState({ currency: "", code: "", vision: true });
+  const [trytur, setTrytur] = useState({ currency: "", code: "", vision: true });
   // MENU ON/OFF
   const [openMenu, setOpenMenu] = useState(-200);
+// VISIBILITY
+const [visiblestate, setVisiblestate] = useState(true)
+function Visible() {
+
+}
   
 
   useEffect(() => {
@@ -64,56 +79,115 @@ const Home = () => {
         currency: currencyData.data[0].rates[10].currency,
         code: currencyData.data[0].rates[10].code,
         mid: currencyData.data[0].rates[10].mid,
+        vision: true
       });
       setEuro({
         currency: currencyData.data[0].rates[7].currency,
         code: currencyData.data[0].rates[7].code,
         mid: currencyData.data[0].rates[7].mid,
+        vision: true
       });
       setUsd({
         currency: currencyData.data[0].rates[1].currency,
         code: currencyData.data[0].rates[1].code,
         mid: currencyData.data[0].rates[1].mid,
+        vision: true
       });
       setNok({
         currency: currencyData.data[0].rates[16].currency,
         code: currencyData.data[0].rates[16].code,
         mid: currencyData.data[0].rates[16].mid,
+        vision: true
+      });
+      setSek({
+        currency: currencyData.data[0].rates[17].currency,
+        code: currencyData.data[0].rates[17].code,
+        mid: currencyData.data[0].rates[17].mid,
+        vision: true
       });
       setCzk({
         currency: currencyData.data[0].rates[13].currency,
         code: currencyData.data[0].rates[13].code,
         mid: currencyData.data[0].rates[13].mid,
+        vision: true
       });
       setThb({
         currency: currencyData.data[0].rates[0].currency,
         code: currencyData.data[0].rates[0].code,
         mid: currencyData.data[0].rates[0].mid,
+        vision: true
       });
       setAud({
         currency: currencyData.data[0].rates[2].currency,
         code: currencyData.data[0].rates[2].code,
         mid: currencyData.data[0].rates[2].mid,
+        vision: true
       });
       setHkn({
         currency: currencyData.data[0].rates[3].currency,
         code: currencyData.data[0].rates[3].code,
         mid: currencyData.data[0].rates[3].mid,
+        vision: true
       });
       setCad({
         currency: currencyData.data[0].rates[4].currency,
         code: currencyData.data[0].rates[4].code,
         mid: currencyData.data[0].rates[4].mid,
+        vision: true
       });
       setHuf({
         currency: currencyData.data[0].rates[8].currency,
         code: currencyData.data[0].rates[8].code,
         mid: currencyData.data[0].rates[8].mid,
+        vision: true
       });
       setChf({
         currency: currencyData.data[0].rates[9].currency,
         code: currencyData.data[0].rates[9].code,
         mid: currencyData.data[0].rates[9].mid,
+        vision: true
+      });
+      setUah({
+        currency: currencyData.data[0].rates[11].currency,
+        code: currencyData.data[0].rates[11].code,
+        mid: currencyData.data[0].rates[11].mid,
+        vision: false
+      });
+      setJpy({
+        currency: currencyData.data[0].rates[12].currency,
+        code: currencyData.data[0].rates[12].code,
+        mid: currencyData.data[0].rates[12].mid,
+        vision: false
+      });
+      setDkk({
+        currency: currencyData.data[0].rates[14].currency,
+        code: currencyData.data[0].rates[14].code,
+        mid: currencyData.data[0].rates[14].mid,
+        vision: false
+      });
+      setHrk({
+        currency: currencyData.data[0].rates[18].currency,
+        code: currencyData.data[0].rates[18].code,
+        mid: currencyData.data[0].rates[18].mid,
+        vision: false
+      });
+      setBgn({
+        currency: currencyData.data[0].rates[20].currency,
+        code: currencyData.data[0].rates[20].code,
+        mid: currencyData.data[0].rates[20].mid,
+        vision: false
+      });
+      setRon({
+        currency: currencyData.data[0].rates[19].currency,
+        code: currencyData.data[0].rates[19].code,
+        mid: currencyData.data[0].rates[19].mid,
+        vision: false
+      });
+      setTrytur({
+        currency: currencyData.data[0].rates[21].currency,
+        code: currencyData.data[0].rates[21].code,
+        mid: currencyData.data[0].rates[21].mid,
+        vision: false
       });
       
     };
@@ -128,6 +202,7 @@ const Home = () => {
       name: ukgbp.currency,
       ratio: pln === 1 ? ukgbp.mid : (pln / ukgbp.mid).toFixed(2),
       plny: `1 PLN = ${(1 / ukgbp.mid).toFixed(4)} ${ukgbp.code}`,
+      visibility: ukgbp.vision
     },
     {
       flag: eu,
@@ -135,6 +210,7 @@ const Home = () => {
       name: euro.currency,
       ratio: pln === 1 ? euro.mid : (pln / euro.mid).toFixed(2),
       plny: `1 PLN = ${(1 / euro.mid).toFixed(4)} ${euro.code}`,
+      visibility: euro.vision
     },
     {
       flag: norway,
@@ -142,6 +218,7 @@ const Home = () => {
       name: nok.currency,
       ratio: pln === 1 ? nok.mid : (pln / nok.mid).toFixed(2),
       plny: `1 PLN = ${(1 / nok.mid).toFixed(4)} ${nok.code}`,
+      visibility: nok.vision
     },
     {
       flag: usa,
@@ -149,6 +226,15 @@ const Home = () => {
       name: usd.currency,
       ratio: pln === 1 ? usd.mid : (pln / usd.mid).toFixed(2),
       plny: `1 PLN = ${(1 / usd.mid).toFixed(4)} ${usd.code}`,
+      visibility: usd.vision
+    },
+    {
+      flag: sweden,
+      code: sek.code,
+      name: sek.currency,
+      ratio: pln === 1 ? sek.mid : (pln / sek.mid).toFixed(2),
+      plny: `1 PLN = ${(1 / sek.mid).toFixed(4)} ${sek.code}`,
+      visibility: sek.vision
     },
     {
       flag: canada,
@@ -156,6 +242,7 @@ const Home = () => {
       name: cad.currency,
       ratio: pln === 1 ? cad.mid : (pln / cad.mid).toFixed(2),
       plny: `1 PLN = ${(1 / cad.mid).toFixed(4)} ${cad.code}`,
+      visibility: cad.vision
     },
     {
       flag: hungary,
@@ -163,6 +250,7 @@ const Home = () => {
       name: huf.currency,
       ratio: pln === 1 ? huf.mid : (pln / huf.mid).toFixed(2),
       plny: `1 PLN = ${(1 / huf.mid).toFixed(4)} ${huf.code}`,
+      visibility: huf.vision
     },
     {
       flag: switzerland,
@@ -170,6 +258,7 @@ const Home = () => {
       name: chf.currency,
       ratio: pln === 1 ? chf.mid : (pln / chf.mid).toFixed(2),
       plny: `1 PLN = ${(1 / chf.mid).toFixed(4)} ${chf.code}`,
+      visibility: chf.vision
     },
     {
       flag: czech,
@@ -177,6 +266,7 @@ const Home = () => {
       name: czk.currency,
       ratio: pln === 1 ? czk.mid : (pln / czk.mid).toFixed(2),
       plny: `1 PLN = ${(1 / czk.mid).toFixed(4)} ${czk.code}`,
+      visibility: czk.vision
     },
     {
       flag: thailand,
@@ -184,6 +274,7 @@ const Home = () => {
       name: thb.currency,
       ratio: pln === 1 ? thb.mid : (pln / thb.mid).toFixed(2),
       plny: `1 PLN = ${(1 / thb.mid).toFixed(4)} ${thb.code}`,
+      visibility: thb.vision
     },
     {
       flag: australia,
@@ -191,6 +282,7 @@ const Home = () => {
       name: aud.currency,
       ratio: pln === 1 ? aud.mid : (pln / aud.mid).toFixed(2),
       plny: `1 PLN = ${(1 / aud.mid).toFixed(4)} ${aud.code}`,
+      visibility: aud.vision
     },
     {
       flag: hongkong,
@@ -198,6 +290,63 @@ const Home = () => {
       name: hkn.currency,
       ratio: pln === 1 ? hkn.mid : (pln / hkn.mid).toFixed(2),
       plny: `1 PLN = ${(1 / hkn.mid).toFixed(4)} ${hkn.code}`,
+      visibility: hkn.vision
+    },
+    {
+      flag: ukraine,
+      code: uah.code,
+      name: uah.currency,
+      ratio: pln === 1 ? uah.mid : (pln / uah.mid).toFixed(2),
+      plny: `1 PLN = ${(1 / uah.mid).toFixed(4)} ${uah.code}`,
+      visibility: uah.vision
+    },
+    {
+      flag: japan,
+      code: jpy.code,
+      name: jpy.currency,
+      ratio: pln === 1 ? jpy.mid : (pln / jpy.mid).toFixed(2),
+      plny: `1 PLN = ${(1 / jpy.mid).toFixed(4)} ${jpy.code}`,
+      visibility: jpy.vision
+    },
+    {
+      flag: denmark,
+      code: dkk.code,
+      name: dkk.currency,
+      ratio: pln === 1 ? dkk.mid : (pln / dkk.mid).toFixed(2),
+      plny: `1 PLN = ${(1 / dkk.mid).toFixed(4)} ${dkk.code}`,
+      visibility: dkk.vision
+    },
+    {
+      flag: croatia,
+      code: hrk.code,
+      name: hrk.currency,
+      ratio: pln === 1 ? hrk.mid : (pln / hrk.mid).toFixed(2),
+      plny: `1 PLN = ${(1 / hrk.mid).toFixed(4)} ${hrk.code}`,
+      visibility: hrk.vision
+    },
+    {
+      flag: bulgaria,
+      code: bgn.code,
+      name: bgn.currency,
+      ratio: pln === 1 ? bgn.mid : (pln / bgn.mid).toFixed(2),
+      plny: `1 PLN = ${(1 / bgn.mid).toFixed(4)} ${bgn.code}`,
+      visibility: bgn.vision
+    },
+    {
+      flag: romania,
+      code: ron.code,
+      name: ron.currency,
+      ratio: pln === 1 ? ron.mid : (pln / ron.mid).toFixed(2),
+      plny: `1 PLN = ${(1 / ron.mid).toFixed(4)} ${ron.code}`,
+      visibility: ron.vision
+    },
+    {
+      flag: turkey,
+      code: trytur.code,
+      name: trytur.currency,
+      ratio: pln === 1 ? trytur.mid : (pln / trytur.mid).toFixed(2),
+      plny: `1 PLN = ${(1 / trytur.mid).toFixed(4)} ${trytur.code}`,
+      visibility: trytur.vision
     },
   ];
   return (
@@ -225,8 +374,8 @@ const Home = () => {
         </div>
       </div>
       {countries.map((item, index) => (
-        <div className="currencies-single-item" data-aos="fade-up">
-          <div className="currencies-flag">
+        <div className="currencies-single-item" data-aos="fade-up" style={{display: `${item.visibility === true ? "grid" : "none"}`}}>
+          <div className="currencies-flag" >
             <img src={item.flag} alt="" />
           </div>
           <div className="currencies-name">
@@ -247,47 +396,43 @@ const Home = () => {
         </button>
       </div>
       <div className="more-currencies" style={{transform: `translateX(${openMenu}%)`}}>
-        <button className="btn-add-country-opened" onClick={() => setOpenMenu(-200)}><img src={plus} alt="" /><span>dodaj zaznaczone</span></button>
+      <button className="btn-add-country-opened" onClick={() => setOpenMenu(-200)}><img src={plus} alt="" /><span>dodaj zaznaczone</span></button>
         <div class="more-container">
-        <div className="more-item">
-          <img src={sweden} alt="sweden" style={{width: "16px", height: "16px"}}/>
-          <p>SEK <span>- korona szwedzka</span></p>
-          <img src={add} alt="add country" />
-          </div>
-          <div className="more-item" data-aos="fade-up">
+        
+          <div className="more-item" data-aos="fade-up" onClick={() => setUah({vision: true, currency: uah.currency, code: uah.code, mid: uah.mid})} >
           <img src={ukraine} alt="ukraine" style={{width: "16px", height: "16px"}}/>
           <p>UAH <span>- hrywna (Ukraina)</span></p>
-          <img src={add} alt="add country" />
+          <img src={uah.vision === true ? check : add} alt="add country" />
           </div>
-          <div className="more-item" data-aos="fade-up">
+          <div className="more-item" data-aos="fade-up"  onClick={() => setJpy({vision: true, currency: jpy.currency, code: jpy.code, mid: jpy.mid})} >
           <img src={japan} alt="japan" style={{width: "16px", height: "16px"}}/>
           <p>JPY <span>- jen (Japonia)</span></p>
-          <img src={add} alt="add country" />
+          <img src={jpy.vision === true ? check : add} alt="add country" />
           </div>
-          <div className="more-item" data-aos="fade-up">
+          <div className="more-item" data-aos="fade-up" onClick={() => setDkk({vision: true, currency: dkk.currency, code: dkk.code, mid: dkk.mid})} >
           <img src={denmark} alt="denmark" style={{width: "16px", height: "16px"}}/>
           <p>DKK <span>- korona duńska</span></p>
-          <img src={add} alt="add country" />
+          <img src={dkk.vision === true ? check : add} alt="add country" />
           </div>
-          <div className="more-item" data-aos="fade-up">
+          <div className="more-item" data-aos="fade-up" onClick={() => setHrk({vision: true, currency: hrk.currency, code: hrk.code, mid: hrk.mid})}>
           <img src={croatia} alt="croatia" style={{width: "16px", height: "16px"}}/>
           <p>HRK <span>- kuna (Chorwacja)</span></p>
-          <img src={add} alt="add country" />
+          <img src={hrk.vision === true ? check : add} alt="add country" />
           </div>
-          <div className="more-item" data-aos="fade-up">
+          <div className="more-item" data-aos="fade-up" onClick={() => setBgn({vision: true, currency: bgn.currency, code: bgn.code, mid: bgn.mid})}>
           <img src={bulgaria} alt="bulgaria" style={{width: "16px", height: "16px"}}/>
           <p>BGN <span>- lew (Bułgaria)</span></p>
-          <img src={add} alt="add country" />
+          <img src={bgn.vision === true ? check : add} alt="add country" />
           </div>
-          <div className="more-item" data-aos="fade-up">
+          <div className="more-item" data-aos="fade-up" onClick={() => setRon({vision: true, currency: ron.currency, code: ron.code, mid: ron.mid})}>
           <img src={romania} alt="romania" style={{width: "16px", height: "16px"}}/>
           <p>RON <span>- lej rumuński</span></p>
-          <img src={add} alt="add country" />
+          <img src={ron.vision === true ? check : add} alt="add country" />
           </div>
-          <div className="more-item" data-aos="fade-up">
+          <div className="more-item" data-aos="fade-up" onClick={() => setTrytur({vision: true, currency: trytur.currency, code: trytur.code, mid: trytur.mid})}>
           <img src={turkey} alt="turkey" style={{width: "16px", height: "16px"}}/>
           <p>TRY <span>- lira turecka</span></p>
-          <img src={add} alt="add country" />
+          <img src={trytur.vision === true ? check : add} alt="add country" />
           </div>
           <div className="more-item">
           <img src={chile} alt="chile" style={{width: "16px", height: "16px"}}/>

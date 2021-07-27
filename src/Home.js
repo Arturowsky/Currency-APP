@@ -427,7 +427,7 @@ const inputEl = useRef(null);
   ];
   return (
     <div className="container">
-      <div className="currency-item" data-aos="fade-up" style={{position: "sticky", top: "5px", background: "#fff", zIndex: "2"}}>
+      <div className="currency-item" style={{position: "sticky", top: "10px", background: "whitesmoke", zIndex: "2", marginBottom: "10px"}}>
         <div className="currency-flag" >
           <img src={poland} alt="poland" />
         </div>

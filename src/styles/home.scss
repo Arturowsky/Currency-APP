@@ -6,7 +6,7 @@
   margin: 10px auto;
   padding: 10px 15px;
   display: grid;
-  grid-template-columns: 50px 1fr 70px 15px 20px;
+  grid-template-columns: 50px 1fr 100px 15px 20px;
   align-items: center;
   // place-items: center;
   border: 1px solid #dad6d6;
@@ -39,9 +39,10 @@
     color: #656363;
     font-family: "Poppins", sans-serif;
     font-size: 1.125rem;
-    width: 60px;
+    width: 100px;
     border: none;
     text-align: right;
+    // background: #ecf0f1;
     
   }
 }
@@ -113,6 +114,11 @@
       position: relative;
   }
   // margin: 10 auto;
+}
+.btn-calc {
+  border: none;
+  background: none;
+  margin-left: -5px
 }
 // MORE CURRENCIES
 .more-currencies {

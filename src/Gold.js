@@ -43,7 +43,7 @@ const Gold = () => {
     AOS.init()
     const fetchData = async () => {
       const goldData = await axios(
-        "http://api.nbp.pl/api/cenyzlota/last/30/?format=json"
+        "https://api.nbp.pl/api/cenyzlota/last/30/?format=json"
       );
       setGoldToday({
         price: goldData.data[29].cena,

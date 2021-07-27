@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
@@ -59,20 +59,26 @@ const Home = () => {
   const [bgn, setBgn] = useState({ currency: "", code: "", vision: true });
   const [ron, setRon] = useState({ currency: "", code: "", vision: true });
   const [trytur, setTrytur] = useState({ currency: "", code: "", vision: true });
+  const [clp, setClp] = useState({ currency: "", code: "", vision: true });
+  const [mxn, setMxn] = useState({ currency: "", code: "", vision: true });
+  const [zar, setZar] = useState({ currency: "", code: "", vision: true });
+  const [brl, setBrl] = useState({ currency: "", code: "", vision: true });
+  const [myr, setMyr] = useState({ currency: "", code: "", vision: true });
   // MENU ON/OFF
   const [openMenu, setOpenMenu] = useState(-200);
 // VISIBILITY
 const [visiblestate, setVisiblestate] = useState(true)
-function Visible() {
-
-}
+const inputEl = useRef(null);
+  const onBtnClick = () => {
+    inputEl.current.focus()
+  }
   
 
   useEffect(() => {
     AOS.init()
     const fetchData = async () => {
       const currencyData = await axios(
-        `http://api.nbp.pl/api/exchangerates/tables/a/`
+        `https://api.nbp.pl/api/exchangerates/tables/a/`
       );
       //   setExchange({ ipaddress: address.data.query, isp: address.data.isp, org: address.data.org, as: address.data.as, region: address.data.regionName, timezone: address.data.timezone})
       setUkgbp({
@@ -187,6 +193,36 @@ function Visible() {
         currency: currencyData.data[0].rates[21].currency,
         code: currencyData.data[0].rates[21].code,
         mid: currencyData.data[0].rates[21].mid,
+        vision: false
+      });
+      setClp({
+        currency: currencyData.data[0].rates[23].currency,
+        code: currencyData.data[0].rates[23].code,
+        mid: currencyData.data[0].rates[23].mid,
+        vision: false
+      });
+      setMxn({
+        currency: currencyData.data[0].rates[25].currency,
+        code: currencyData.data[0].rates[25].code,
+        mid: currencyData.data[0].rates[25].mid,
+        vision: false
+      });
+      setZar({
+        currency: currencyData.data[0].rates[26].currency,
+        code: currencyData.data[0].rates[26].code,
+        mid: currencyData.data[0].rates[26].mid,
+        vision: false
+      });
+      setBrl({
+        currency: currencyData.data[0].rates[27].currency,
+        code: currencyData.data[0].rates[27].code,
+        mid: currencyData.data[0].rates[27].mid,
+        vision: false
+      });
+      setMyr({
+        currency: currencyData.data[0].rates[28].currency,
+        code: currencyData.data[0].rates[28].code,
+        mid: currencyData.data[0].rates[28].mid,
         vision: false
       });
       
@@ -348,10 +384,50 @@ function Visible() {
       plny: `1 PLN = ${(1 / trytur.mid).toFixed(4)} ${trytur.code}`,
       visibility: trytur.vision
     },
+    {
+      flag: chile,
+      code: clp.code,
+      name: clp.currency,
+      ratio: pln === 1 ? clp.mid : (pln / clp.mid).toFixed(2),
+      plny: `1 PLN = ${(1 / clp.mid).toFixed(4)} ${clp.code}`,
+      visibility: clp.vision
+    },
+    {
+      flag: mexico,
+      code: mxn.code,
+      name: mxn.currency,
+      ratio: pln === 1 ? mxn.mid : (pln / mxn.mid).toFixed(2),
+      plny: `1 PLN = ${(1 / mxn.mid).toFixed(4)} ${mxn.code}`,
+      visibility: mxn.vision
+    },
+    {
+      flag: southafrica,
+      code: zar.code,
+      name: `${zar.currency.slice(0, 4)} (RPA)`,
+      ratio: pln === 1 ? zar.mid : (pln / zar.mid).toFixed(2),
+      plny: `1 PLN = ${(1 / zar.mid).toFixed(4)} ${zar.code}`,
+      visibility: zar.vision
+    },
+    {
+      flag: brazil,
+      code: brl.code,
+      name: brl.currency,
+      ratio: pln === 1 ? brl.mid : (pln / brl.mid).toFixed(2),
+      plny: `1 PLN = ${(1 / brl.mid).toFixed(4)} ${brl.code}`,
+      visibility: brl.vision
+    },
+    {
+      flag: malaysia,
+      code: myr.code,
+      name: myr.currency,
+      ratio: pln === 1 ? myr.mid : (pln / myr.mid).toFixed(2),
+      plny: `1 PLN = ${(1 / myr.mid).toFixed(4)} ${myr.code}`,
+      visibility: myr.vision
+    },
   ];
   return (
     <div className="container">
-      <div className="currency-item" data-aos="fade-up">
+      <div className="currency-item" data-aos="fade-up" style={{position: "sticky", top: "5px", background: "#fff", zIndex: "2"}}>
         <div className="currency-flag" >
           <img src={poland} alt="poland" />
         </div>
@@ -366,15 +442,17 @@ function Visible() {
             value={pln}
             onChange={(e) => setPln(e.target.value)}
             min="0"
+            ref={inputEl}
           />
         </div>
         <img src={line} alt="" />
         <div className="currency-calc">
-          <img src={calc} alt="" />
+          {/* <img src={calc} alt="" /> */}
+          <button className="btn-calc" aria-label="Provide number" onClick={onBtnClick}><img src={calc} alt="" /></button>
         </div>
       </div>
       {countries.map((item, index) => (
-        <div className="currencies-single-item" data-aos="fade-up" style={{display: `${item.visibility === true ? "grid" : "none"}`}}>
+        <div className="currencies-single-item" data-aos="fade-up" style={{display: `${item.visibility === true ? "grid" : "none"}`}} key={index}>
           <div className="currencies-flag" >
             <img src={item.flag} alt="" />
           </div>
@@ -397,7 +475,7 @@ function Visible() {
       </div>
       <div className="more-currencies" style={{transform: `translateX(${openMenu}%)`}}>
       <button className="btn-add-country-opened" onClick={() => setOpenMenu(-200)}><img src={plus} alt="" /><span>dodaj zaznaczone</span></button>
-        <div class="more-container">
+        <div className="more-container">
         
           <div className="more-item" data-aos="fade-up" onClick={() => setUah({vision: true, currency: uah.currency, code: uah.code, mid: uah.mid})} >
           <img src={ukraine} alt="ukraine" style={{width: "16px", height: "16px"}}/>
@@ -434,30 +512,30 @@ function Visible() {
           <p>TRY <span>- lira turecka</span></p>
           <img src={trytur.vision === true ? check : add} alt="add country" />
           </div>
-          <div className="more-item">
+          <div className="more-item" data-aos="fade-up" onClick={() => setClp({vision: true, currency: clp.currency, code: clp.code, mid: clp.mid})}>
           <img src={chile} alt="chile" style={{width: "16px", height: "16px"}}/>
           <p>CLP <span>- peso chilijskie</span></p>
-          <img src={add} alt="add country" />
+          <img src={clp.vision === true ? check : add} alt="add country" />
           </div>
-          <div className="more-item">
+          <div className="more-item" data-aos="fade-up" onClick={() => setMxn({vision: true, currency: mxn.currency, code: mxn.code, mid: mxn.mid})}>
           <img src={mexico} alt="mexico" style={{width: "16px", height: "16px"}}/>
           <p>MXN <span>- peso meksykańskie</span></p>
-          <img src={add} alt="add country" />
+          <img src={mxn.vision === true ? check : add} alt="add country" />
           </div>
-          <div className="more-item">
+          <div className="more-item" data-aos="fade-up" onClick={() => setZar({vision: true, currency: zar.currency, code: zar.code, mid: zar.mid})}>
           <img src={southafrica} alt="south-africa" style={{width: "16px", height: "16px"}}/>
           <p>ZAR <span>- rand (Republika Południowej Afryki)</span></p>
-          <img src={add} alt="add country" />
+          <img src={zar.vision === true ? check : add} alt="add country" />
           </div>
-          <div className="more-item">
+          <div className="more-item" data-aos="fade-up" onClick={() => setBrl({vision: true, currency: brl.currency, code: brl.code, mid: brl.mid})}>
           <img src={brazil} alt="brazil" style={{width: "16px", height: "16px"}}/>
           <p>BRL <span>- real (Brazylia)</span></p>
-          <img src={add} alt="add country" />
+          <img src={brl.vision === true ? check : add} alt="add country" />
           </div>
-          <div className="more-item">
+          <div className="more-item" data-aos="fade-up" onClick={() => setMyr({vision: true, currency: myr.currency, code: myr.code, mid: myr.mid})}>
           <img src={malaysia} alt="malaysia" style={{width: "16px", height: "16px"}}/>
           <p>MYR <span>- ringgit (Malezja)</span></p>
-          <img src={add} alt="add country" />
+          <img src={myr.vision === true ? check : add} alt="add country" />
           </div>
           
         </div>

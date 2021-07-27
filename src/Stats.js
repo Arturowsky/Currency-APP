@@ -19,6 +19,7 @@ import hongkong from "./assets/flags/hongkong.svg";
 import canada from "./assets/flags/canada.svg";
 import hungary from "./assets/flags/hungary.svg";
 import switzerland from "./assets/flags/switzerland.svg";
+import sweden from "./assets/flags/sweden.svg";
 import graphstat from "./assets/images/graphstat.svg";
 
 const countriesStats = [
@@ -38,6 +39,12 @@ const countriesStats = [
     code: "nok",
     codename: "NOK",
     currencyname: "korona norweska",
+    image: norway,
+  },
+  {
+    code: "sek",
+    codename: "SEK",
+    currencyname: "korona szwedzka",
     image: norway,
   },
   {
@@ -69,6 +76,24 @@ const countriesStats = [
     codename: "CZK",
     currencyname: "korona czeska",
     image: czech,
+  },
+  {
+    code: "thb",
+    codename: "THB",
+    currencyname: "bat",
+    image: thailand,
+  },
+  {
+    code: "aud",
+    codename: "AUD",
+    currencyname: "dolar australijski",
+    image: australia,
+  },
+  {
+    code: "hkd",
+    codename: "HKD",
+    currencyname: "dolar hongkongu",
+    image: hongkong,
   },
 ];
 const Stats = () => {
@@ -102,7 +127,7 @@ const Stats = () => {
     AOS.init()
     const fetchData = async () => {
       const currentCurrency = await axios(
-        `http://api.nbp.pl/api/exchangerates/rates/a/${countryCode}/last/10/?format=json`
+        `https://api.nbp.pl/api/exchangerates/rates/a/${countryCode}/last/10/?format=json`
       );
       if (countryCode === "gbp") {
         setUkgbp({
@@ -318,7 +343,115 @@ const Stats = () => {
           flag: czech,
         });
       }
-      console.log(currentCurrency);
+      else if (countryCode === "thb") {
+        setUkgbp({
+          currency: currentCurrency.data.currency,
+          code: currentCurrency.data.code,
+          mid: currentCurrency.data.rates[9].mid,
+          time: currentCurrency.data.rates[9].effectiveDate,
+          mid2: currentCurrency.data.rates[8].mid,
+          time2: currentCurrency.data.rates[8].effectiveDate,
+          mid3: currentCurrency.data.rates[7].mid,
+          time3: currentCurrency.data.rates[7].effectiveDate,
+          mid4: currentCurrency.data.rates[6].mid,
+          time4: currentCurrency.data.rates[6].effectiveDate,
+          mid5: currentCurrency.data.rates[5].mid,
+          time5: currentCurrency.data.rates[5].effectiveDate,
+          mid6: currentCurrency.data.rates[4].mid,
+          time6: currentCurrency.data.rates[4].effectiveDate,
+          mid7: currentCurrency.data.rates[3].mid,
+          time7: currentCurrency.data.rates[3].effectiveDate,
+          mid8: currentCurrency.data.rates[2].mid,
+          time8: currentCurrency.data.rates[2].effectiveDate,
+          mid9: currentCurrency.data.rates[1].mid,
+          time9: currentCurrency.data.rates[1].effectiveDate,
+          mid10: currentCurrency.data.rates[0].mid,
+          time10: currentCurrency.data.rates[0].effectiveDate,
+          flag: thailand,
+        });
+      }
+      else if (countryCode === "aud") {
+        setUkgbp({
+          currency: currentCurrency.data.currency,
+          code: currentCurrency.data.code,
+          mid: currentCurrency.data.rates[9].mid,
+          time: currentCurrency.data.rates[9].effectiveDate,
+          mid2: currentCurrency.data.rates[8].mid,
+          time2: currentCurrency.data.rates[8].effectiveDate,
+          mid3: currentCurrency.data.rates[7].mid,
+          time3: currentCurrency.data.rates[7].effectiveDate,
+          mid4: currentCurrency.data.rates[6].mid,
+          time4: currentCurrency.data.rates[6].effectiveDate,
+          mid5: currentCurrency.data.rates[5].mid,
+          time5: currentCurrency.data.rates[5].effectiveDate,
+          mid6: currentCurrency.data.rates[4].mid,
+          time6: currentCurrency.data.rates[4].effectiveDate,
+          mid7: currentCurrency.data.rates[3].mid,
+          time7: currentCurrency.data.rates[3].effectiveDate,
+          mid8: currentCurrency.data.rates[2].mid,
+          time8: currentCurrency.data.rates[2].effectiveDate,
+          mid9: currentCurrency.data.rates[1].mid,
+          time9: currentCurrency.data.rates[1].effectiveDate,
+          mid10: currentCurrency.data.rates[0].mid,
+          time10: currentCurrency.data.rates[0].effectiveDate,
+          flag: australia,
+        });
+      }
+      else if (countryCode === "hkd") {
+        setUkgbp({
+          currency: currentCurrency.data.currency,
+          code: currentCurrency.data.code,
+          mid: currentCurrency.data.rates[9].mid,
+          time: currentCurrency.data.rates[9].effectiveDate,
+          mid2: currentCurrency.data.rates[8].mid,
+          time2: currentCurrency.data.rates[8].effectiveDate,
+          mid3: currentCurrency.data.rates[7].mid,
+          time3: currentCurrency.data.rates[7].effectiveDate,
+          mid4: currentCurrency.data.rates[6].mid,
+          time4: currentCurrency.data.rates[6].effectiveDate,
+          mid5: currentCurrency.data.rates[5].mid,
+          time5: currentCurrency.data.rates[5].effectiveDate,
+          mid6: currentCurrency.data.rates[4].mid,
+          time6: currentCurrency.data.rates[4].effectiveDate,
+          mid7: currentCurrency.data.rates[3].mid,
+          time7: currentCurrency.data.rates[3].effectiveDate,
+          mid8: currentCurrency.data.rates[2].mid,
+          time8: currentCurrency.data.rates[2].effectiveDate,
+          mid9: currentCurrency.data.rates[1].mid,
+          time9: currentCurrency.data.rates[1].effectiveDate,
+          mid10: currentCurrency.data.rates[0].mid,
+          time10: currentCurrency.data.rates[0].effectiveDate,
+          flag: hongkong,
+        });
+      }
+      else if (countryCode === "sek") {
+        setUkgbp({
+          currency: currentCurrency.data.currency,
+          code: currentCurrency.data.code,
+          mid: currentCurrency.data.rates[9].mid,
+          time: currentCurrency.data.rates[9].effectiveDate,
+          mid2: currentCurrency.data.rates[8].mid,
+          time2: currentCurrency.data.rates[8].effectiveDate,
+          mid3: currentCurrency.data.rates[7].mid,
+          time3: currentCurrency.data.rates[7].effectiveDate,
+          mid4: currentCurrency.data.rates[6].mid,
+          time4: currentCurrency.data.rates[6].effectiveDate,
+          mid5: currentCurrency.data.rates[5].mid,
+          time5: currentCurrency.data.rates[5].effectiveDate,
+          mid6: currentCurrency.data.rates[4].mid,
+          time6: currentCurrency.data.rates[4].effectiveDate,
+          mid7: currentCurrency.data.rates[3].mid,
+          time7: currentCurrency.data.rates[3].effectiveDate,
+          mid8: currentCurrency.data.rates[2].mid,
+          time8: currentCurrency.data.rates[2].effectiveDate,
+          mid9: currentCurrency.data.rates[1].mid,
+          time9: currentCurrency.data.rates[1].effectiveDate,
+          mid10: currentCurrency.data.rates[0].mid,
+          time10: currentCurrency.data.rates[0].effectiveDate,
+          flag: sweden,
+        });
+      }
+      // console.log(currentCurrency);
     };
 
     fetchData();

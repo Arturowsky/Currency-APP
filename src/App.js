@@ -60,12 +60,12 @@ export default function App() {
                 <p>Złoto</p>
               </div>
             </Link>
-            <Link  to="/konwerter">
+            {/* <Link  to="/konwerter">
               <div className="menu-item">
                 <img src={konwerter} alt="home" className="icon" />
                 <p>Konwerter</p>
               </div>
-            </Link>
+            </Link> */}
             <Link  to="/info">
               <div className="menu-item">
                 <img src={list} alt="home" className="icon" />
